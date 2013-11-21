@@ -397,7 +397,7 @@ char *do_item_cachedump(const unsigned int slabs_clsid, const unsigned int limit
         /* Copy the key since it may not be null-terminated in the struct */
         strncpy(key_temp, ITEM_key(it), it->nkey);
         key_temp[it->nkey] = 0x00; /* terminate */
-        len = snprintf(temp, sizeof(temp), "ITEM %s [%d b; %lu s]\r\n",
+        len = snprintf(temp, sizeof(temp), "ITEM %s [%d b; %llu s]\r\n",
                        key_temp, it->nbytes - 2,
                        (unsigned long)it->exptime + process_started);
         if (bufcurr + len + 6 > memlimit)  /* 6 is END\r\n\0 */
