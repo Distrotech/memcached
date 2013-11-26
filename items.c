@@ -400,7 +400,7 @@ char *do_item_cachedump(const unsigned int slabs_clsid, const unsigned int limit
 #ifdef __ILP32__
         len = snprintf(temp, sizeof(temp), "ITEM %s [%d b; %llu s]\r\n",
 #else
-        len = snprintf(temp, sizeof(temp), "ITEM %s [%d b; %llu s]\r\n",
+        len = snprintf(temp, sizeof(temp), "ITEM %s [%d b; %lu s]\r\n",
 #endif
                        key_temp, it->nbytes - 2,
                        (unsigned long)it->exptime + process_started);
